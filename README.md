@@ -1,66 +1,59 @@
-Covid-19 Somaliland API
-GitHub stars GitHub forks HitCount
-<hr/>
+# Covid-19 Somaliland API
+[![GitHub stars](https://img.shields.io/github/stars/Abdirahiim/covid-19-somaliland-api)](https://github.com/Abdirahiim/covid-19-
 
-Covid-19 Somaliland API is an API made for tracking Coronavirus cases in Somaliland, the data is based on the official Somalilandcovid19.com website and it's updated daily.
+Covid-19 Somaliland API is an API made for tracking Coronavirus cases in Somaliland, the data is based on the [official Somaliland Coronavirus website](https://somalilandcovid19.com)  and it's updated daily.
+
+## API Reference
+
 
 
 You can open the URL in your browser to further inspect the response. Or you can make this curl call in your terminal to see the prettified response:
 
+```
+```
 
-Swagger
-You can use the API through the SwaggerUI.
 
 
-Latest Endpoint
+## API Endpoints
+
+### Latest Endpoint
+
 Gets the latest national confirmed, recovered and deaths cases.
 
+```http
 GET /latest
-Sample response
+```
 
+__Sample response__
+```json
 {
-   [
+  "latest": [
     "confirmed": 6,
     "deaths": 1,
     "recovered": 2
   ]
 }
-Locations Endpoint
-List of all locations
-Gets the latest national confirmed, recovered and deaths cases of each location
+```
 
-GET /locations
-Sample response
+```
 
-{
-   [
-    {
-    "city": "Hargeysa",
-    "confirmed": 3,
-    "deaths": 0,
-    "id": 1,
-    "province": "Maroodijeex",
-    "recovered": 0
-    },
-    {
-    "city": "Burco",
-    "confirmed": 1,
-    "deaths": 0,
-    "id": 2,
-    "province": "Togdheer",
-    "recovered": 1
-     }
-   ]
- }
+#### Gets location by city
 
+```http
+GET /locations/city/:city
+```
+__Path Parameters__
+| __Path parameter__ | __Required/Optional__ | __Description__                                                                                                                                                          | __Type__ |
+| ------------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| province                 | OPTIONAL              | The name of the city in which the location belongs to. The list of the cities can be found in the locations response: ``/locations`` | String  |
 
-
-Path parameter	Required/Optional	Description	Type
-province	OPTIONAL	The name of the city in which the location belongs to. The list of the cities can be found in the locations response: /locations	String
-Example Request
+#### Example Request
+```http
 GET /locations/city/burao
-Sample response
+```
 
+__Sample response__
+```json
 {
     "locations": [
     {
