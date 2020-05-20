@@ -1,5 +1,6 @@
 Covid-19 Somaliland API
 GitHub stars GitHub forks HitCount
+<hr/>
 
 Covid-19 Somaliland API is an API made for tracking Coronavirus cases in Somaliland, the data is based on the official Somalilandcovid19.com website and it's updated daily.
 
